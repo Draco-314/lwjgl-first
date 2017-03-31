@@ -60,9 +60,6 @@ public class Window {
 
 		// Make the window visible
 		glfwShowWindow(windowHandle);
-		
-		GL.createCapabilities();
-		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	}
 	
 	public void destroyWindow(){
@@ -76,12 +73,14 @@ public class Window {
 		return glfwWindowShouldClose(windowHandle);
 	}
 	
-	public void clearBuffer(){
-		glClear(GL_COLOR_BUFFER_BIT);
-	}
-	
 	public void updateWindow(){		
 		glfwSwapBuffers(windowHandle);
 		glfwPollEvents();
+	}
+	
+	public void glfwInit(){
+		GL.createCapabilities();
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
 	}
 }
