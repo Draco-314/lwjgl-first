@@ -15,7 +15,7 @@ public class Window {
 	public long windowHandle;
 //	public static int width, height;
 	
-	public void initWindow(){
+	public void initWindow(){		
 		if(!GLFW.glfwInit()){
 			throw new IllegalStateException("GLFW failed to init");
 		}

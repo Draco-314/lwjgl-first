@@ -5,7 +5,13 @@ public class TempMain {
 	private static final long TICK_MS = 500;
 	
 	public static void main(String[] args) {
-		window.initWindow();
+		String osName = System.getProperty("os.name");
+		if(osName.contains("Mac")){
+			System.out.println("rip in sheep");
+			return;
+		}else{
+			window.initWindow();
+		}
 		long lastTick = System.currentTimeMillis();
 		window.glfwInit();
 		while(!window.shouldClose()){
